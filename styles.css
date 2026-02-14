@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    background: 
+        linear-gradient(rgba(10,15,25,0.9), rgba(10,15,25,0.95)),
+        url("images/playlikes1mple.png") center/cover no-repeat fixed;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #1e293b;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #22c55e;
+}
+
+.about-text h2 {
+    margin-bottom: 1rem;
+}
+
+/* SOCIALS SECTION */
+.socials {
+    margin-top: 25px;
+}
+
+.socials h3 {
+    margin-bottom: 15px;
+    color: #22c55e;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: white;
+}
+
+/* Hover effect */
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+/* Platform Colors */
+.social-btn.steam:hover {
+    border-color: #66c0f4;
+    color: #66c0f4;
+}
+
+.social-btn.faceit:hover {
+    border-color: #ff5500;
+    color: #ff5500;
+}
+
+.social-btn.twitter:hover {
+    border-color: #1da1f2;
+    color: #1da1f2;
+}
+
+.social-btn.twitch:hover {
+    border-color: #9146ff;
+    color: #9146ff;
+}
+
+.social-btn.discord:hover {
+    border-color: #5865f2;
+    color: #5865f2;
+}
+
+/* SOCIAL ICON SECTION */
+.socials {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s ease;
+    border: 1px solid #334155;
+    text-decoration: none;
+}
+
+/* Hover Effects */
+.icon:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Platform Colors */
+.icon.steam:hover {
+    color: #66c0f4;
+    border-color: #66c0f4;
+}
+
+.icon.faceit:hover {
+    color: #ff5500;
+    border-color: #ff5500;
+}
+
+.icon.twitter:hover {
+    color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.icon.twitch:hover {
+    color: #9146ff;
+    border-color: #9146ff;
+}
+
+.icon.discord:hover {
+    color: #5865f2;
+    border-color: #5865f2;
+}
+
+/* HIGHLIGHTS SECTION */
+.highlights {
+    padding: 2rem 3rem;
+}
+
+.highlights h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* VIDEO GRID */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 35px;
+    padding: 3rem 5%;
+}
+
+.video-card {
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+}
+
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover video {
+    transform: scale(1.08);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.video-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Play button */
+.play-button {
+    width: 65px;
+    height: 65px;
+    background: rgba(34,197,94,0.95);
+    border-radius: 50%;
+    position: relative;
+}
+
+.play-button::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 20px;
+    border-style: solid;
+    border-width: 12px 0 12px 18px;
+    border-color: transparent transparent transparent white;
+}
+
+.video-info {
+    margin-top: 12px;
+}
+
+.video-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.stats {
+    padding: 4rem 5%;
+}
+
+.stats h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.stat-box {
+    background: #1e293b;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(34,197,94,0.3);
+}
+
+.stat-box h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #94a3b8;
+}
+
+.stat-box p {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.rating-bar {
+    height: 12px;
+    margin: 15px 0 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal video {
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Make sure wrapper controls stacking */
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Overlay must capture clicks */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.video-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Play button */
+.play-button {
+    width: 60px;
+    height: 60px;
+    background: #22c55e;
+    border-radius: 50%;
+    position: relative;
+}
+
+.play-button::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 18px;
+    border-style: solid;
+    border-width: 12px 0 12px 18px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.modal video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 35px;
+    cursor: pointer;
+    color: white;
+}
+
+/* TOURNAMENT SECTION */
+.tournaments {
+    padding: 4rem 5%;
+}
+
+.tournaments h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tournament-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.tournament-card {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 14px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.tournament-card:hover {
+    transform: translateY(-6px);
+    border: 1px solid #22c55e;
+    box-shadow: 0 10px 25px rgba(34,197,94,0.3);
+}
+
+.tournament-info h3 {
+    margin-bottom: 10px;
+}
+
+.tournament-info p {
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+/* Placement badges */
+.badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #334155;
+    color: white;
+}
+
+.badge.gold {
+    background: linear-gradient(90deg, #facc15, #eab308);
+    color: black;
+}
+
+.badge.silver {
+    background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+    color: black;
+}
+
+.teammates {
+    margin-top: 15px;
+}
+
+.teammates strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #22c55e;
+}
+
+.teammates ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.teammates li {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.teammates li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+}
